@@ -1,0 +1,17 @@
+create or replace procedure num2word_dec (n number) is
+word varchar(20);
+begin
+select decode (n,0,'zero',1,'one',2,'two',3,'three',4,'four',5,'five',6,'six',7,'seven',
+8,'eight',9,'nine','non single digit') into word from dual;
+dbms_output.put_line(word);
+end;
+/
+
+set serverout on
+
+execute num2word_dec(2);
+
+
+
+
+

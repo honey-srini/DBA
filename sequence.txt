@@ -1,0 +1,10 @@
+#To create sequence:
+create sequence seq_empno start with 1 minvalue 1 
+maxvalue 1000000 nocycle;
+
+#To view Sequence
+select  sequence_name from user_sequences ;
+
+#To insert values using sequence:
+insert into employee values
+(seq_empno.nextval,'abishek','trainee',25000,2500,'IT','16-jan-02',20);

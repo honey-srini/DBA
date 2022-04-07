@@ -1,0 +1,17 @@
+#To create a table with same structure as employee:
+create table emp_log as select * from employee where empno=0;
+
+alter table emp_log add(new_dob date,user_id varchar(10),curdate date);
+
+#To create Trigger
+
+create or replace trigger trig_update after update on employee for each row
+begin
+insert into emp_log values(:old.empno,:old.name,:old.job,:old.salary,
+:old.commission,:old.deparment,:old.dob,:old.age,:new.dob,user,sysdate);
+end;
+/
+
+update employee set dob='16-jan-2003' where empno=1;
+
+

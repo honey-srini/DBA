@@ -1,0 +1,24 @@
+#To create table:
+create table personal(EmpNo number(10) ,blood_grp varchar(5),height number(3),
+weight number(5),mobile_no number (12));
+
+#To add foreign key:
+alter table personal add foreign key(EmpNo) references employee(EmpNo); 
+
+
+1.select name from employee where age>40 ;
+
+2.select name,salary from employee where salary between 10000 and 60000;
+
+3.
+
+4.
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+create procedure pr_add_emp(name varchar,job varchar,salary number,
+commission number ,department varchar, dob date,age number) 
+is
+begin 
+insert into employee values(seq_empno.nextval,name,job,salary,commission,
+department,dob,age);
+end;
+
+
+execute pr_add_emp('harish','analyst',50000,5000,'it','05-sep-04',17);
+

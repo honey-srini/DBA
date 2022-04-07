@@ -1,0 +1,13 @@
+#To create a table:
+create table employee(empno number(10) primary key , name varchar(15),job varchar(15),salary number(8),commission number(6),deparment varchar(15));
+
+#To insert a value:
+insert into employee values(20,'srini','developer',60000,2000,'software');
+insert into employee values(06,'honey','tester',100000,6000,'software');
+insert into employee values(02,'srinivasan','trainee',30000,3000,'software');
+
+#To add contraints:
+alter table employee add constraints sal_chk check(salary>0 AND salary > commission );
+
+#To view contraints
+select constraint_name,constraint_type , table_name from user_constraints where table_name='EMPLOYEE';

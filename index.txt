@@ -1,0 +1,12 @@
+#To create index:
+create index idx_empname on employee(name);
+create index idx_nam_age on employee(upper(name),age);
+
+#To view index:
+select index_name from user_indexes where table_name='EMPLOYEE';
+
+#To alter index
+alter index idx_nam_age rebuild;
+
+#To drop index
+drop index idx_empname;

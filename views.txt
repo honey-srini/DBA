@@ -1,0 +1,27 @@
+#To create view:
+create view workers as select * from employee where job <> 'manager';
+
+#To add values to view
+insert into workers values(50,'Antony','trainee',20000,2000,'software');
+
+
+alter table employee add(dob date);
+
+update employee set dob='29-jan-2016' where empno=29;
+
+alter table employee add(age number(3));
+
+
+#To find age:
+update employee set age=round((sysdate-dob)/365) where empno<>0;
+
+
+#To create another view:
+create view upd_workers as select * from employee;
+
+#To add values to view:
+insert into upd_workers values(07,'shriram','test associate',25000,2500,'IT','07-mar-00',22);
+
+
+
+

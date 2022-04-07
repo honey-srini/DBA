@@ -1,0 +1,34 @@
+1.create a user test followed by your 2 digit dept number :
+create user test123 identified by 123test;
+
+
+2.provide necassay permision to login and create basic objects in this :
+grant create session to test123;
+grant resource to test123;
+
+3.provide all preveliges for emp table to new user:
+grant all on employee to test123;
+
+4.withdraw the delete permission for employee table frim new user:
+revoke delete on employee from test123;
+
+5.select and insert employee table from new user.:
+select * from cat00.employee;
+insert into cat00.employee values(10,'kumar','chairman',200000,20000,'HR','24-sep-00',20);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
