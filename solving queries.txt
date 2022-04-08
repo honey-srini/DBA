@@ -10,9 +10,9 @@ alter table personal add foreign key(EmpNo) references employee(EmpNo);
 
 2.select name,salary from employee where salary between 10000 and 60000;
 
-3.
+3.select empl.name name,empl.age age from empl inner join personel on empl.empno=personel.empno where personel.bld_grp='a1+ve';
 
-4.
+4.select max(height) from personel;
 
 
 
