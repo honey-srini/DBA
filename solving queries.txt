@@ -12,7 +12,11 @@ alter table personal add foreign key(EmpNo) references employee(EmpNo);
 
 3.select empl.name name,empl.age age from empl inner join personel on empl.empno=personel.empno where personel.bld_grp='a1+ve';
 
-4.select max(height) from personel;
+4.Select o.empno, o.name, i.height 
+From employee o
+INNER JOIN personal i 
+ON o.empno =i.empno 
+Where i.height in (select max(height) from personal)
 
 
 
