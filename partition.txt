@@ -1,3 +1,8 @@
 create table sal_part(emp_id number primary key,name varchar(20), Sal number(10,2)) partition by range(Sal)
 (partition p1 values less than(5000) tablespace users,partition p2 values less than(15000) tablespace users);
 
+insert into sal_part values(1001,'srini',10000);
+insert into sal_part values(1002,'honey',2000);
+
+select * from sal_part partition(p1);
+select * from sal_part partition(p2);
