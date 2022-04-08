@@ -1,0 +1,25 @@
+PACKAGE DEFINITION:
+create package pack1 is
+function fn_add2(first number , second number)
+return number;
+procedure pr_year(db date);
+end;
+/
+
+PACKAGE bODY:
+create or replace package body pack1 is
+function fn_add2(first number,second number)
+return number is
+begin
+return(first+second);
+end;
+procedure pr_year(db date) is
+begin
+DBMS_output.put_line (round((sysdate-db)/365));
+end;
+end;
+/
+
+
+select pack1.fn_add2(2,2) from dual;
+execute pack1.pr_year('20-nov-2000');
