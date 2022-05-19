@@ -1,0 +1,40 @@
+OUTPUT:
+create table ex14 (name varchar2(20) ,job varchar2(20),id number);
+
+insert into ex14 values('Rishab','Developer',1);
+insert into ex14 values('Harish','Developer',2);
+
+select * from cat04.ex14;
+
+insert into cat04.ex14 values('Kiwi','Testing',3);
+insert into cat04.ex14 values('cockroach','Testing',4);
+
+lock table cat04.ex14 in share mode nowait;
+lock table cat04.ex14 in share mode;
+lock table cat04.ex14 in exclusive mode nowait;
+
+update cat04.ex14 set id = 100 where name = 'Rishab';
+update cat04.ex14 set id = 1000 where name = 'Rishab';
+update cat04.ex14 set id = 10000 where name = 'Rishab';
+update cat04.ex14 set id = 200 where name = 'Harish';
+update cat04.ex14 set id = 300 where name = 'Kiwi';
+
+grant all on ex14 to test04;
+
+delete from ex14 where name='Rishab';
+
+drop table ex14;
+ 
+OUTPUT:
+SQL> show user
+USER is "CAT04"
+SQL> lock table cat04.ex14 in share mode nowait;
+
+Table(s) Locked.
+
+SQL> update cat04.ex14 set id = 100 where name = 'Rishab';
+update cat04.ex14 set id = 100 where name = 'Rishab'
+             *
+ERROR at line 1:
+ORA-00060: deadlock detected while waiting for resource
+ 
