@@ -1,0 +1,16 @@
+QUERIES:
+SQL> set timing on;
+SQL> Select count(*) row_q2 from employee where salary > 25000;
+
+    ROW_Q2
+----------
+         5
+
+Elapsed: 00:00:00.26
+SQL> Select count(*) row_q3 from employee where job= 'trainee' or age>20;
+
+    ROW_Q3
+----------
+	    3
+         
+Elapsed: 00:00:00.31

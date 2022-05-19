@@ -1,0 +1,41 @@
+TABLESPACE
+
+create tablespace tbs_srini
+  datafile 'tbs_srini_01.dat' 
+    SIZE 20M
+  ONLINE;
+
+
+create table tbs_table(deptno varchar(10),name varchar(10),age number(4)) tablespace tbs_srini;
+insert into tbs_table values('19-uca-051','srini',21);
+
+alter tablespace tbs_srini
+ add datafile 'tbs_srini_02.dat'
+   SIZE 20M
+   AUTOEXTEND ON;
+
+drop datafile:
+alter tablespace tbs_srini
+drop datafile 'tbs_srini_02.dat';
+
+select * from user_tablespaces ;
+
+drop tablespace tbs_srini including contents and datafiles;
+
+CLUSTER
+
+create cluster srini_clust (empno number(10)) size 600 tablespace tbs_srini;
+
+CREATE INDEX idx_srini_clust ON CLUSTER srini_clust;
+
+CREATE TABLE emp_10
+   CLUSTER srini_clust (empno)
+   AS SELECT * FROM employee WHERE empno = 10;
+
+CREATE TABLE emp_20
+   CLUSTER srini_clust (empno)
+   AS SELECT * FROM employee WHERE empno = 20;
+
+select * from user_clusters;
+
+
