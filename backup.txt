@@ -1,0 +1,130 @@
+cd directory to oracle
+exp -- export ----
+@orcl
+
+expt--folder
+
+user lvel , table level
+
+imp-import
+after file name
+
+
+Microsoft Windows [Version 10.0.19044.1706]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\HONEY>cd..
+
+C:\Users>cd..
+
+C:\>exp
+
+Export: Release 10.2.0.3.0 - Production on Thu May 19 23:14:19 2022
+
+Copyright (c) 1982, 2005, Oracle.  All rights reserved.
+
+
+Username: scott
+Password:
+
+Connected to: Oracle Database 10g Enterprise Edition Release 10.2.0.3.0 - Production
+With the Partitioning, OLAP and Data Mining options
+Enter array fetch buffer size: 4096 >
+
+Export file: EXPDAT.DMP > c:\export\exp1
+
+(2)U(sers), or (3)T(ables): (2)U > u
+
+Export grants (yes/no): yes > yes
+
+Export table data (yes/no): yes > yes
+
+Compress extents (yes/no): yes > yes
+
+Export done in WE8MSWIN1252 character set and AL16UTF16 NCHAR character set
+. exporting pre-schema procedural objects and actions
+. exporting foreign function library names for user SCOTT
+. exporting PUBLIC type synonyms
+. exporting private type synonyms
+. exporting object type definitions for user SCOTT
+About to export SCOTT's objects ...
+. exporting database links
+. exporting sequence numbers
+. exporting cluster definitions
+. about to export SCOTT's tables via Conventional Path ...
+. . exporting table                          BONUS          0 rows exported
+. . exporting table                       DEADLOCK          6 rows exported
+. . exporting table                           DEPT          4 rows exported
+. . exporting table                      DIFF_SIZE          1 rows exported
+. . exporting table                            EMP         14 rows exported
+. . exporting table                           EMP1          0 rows exported
+. . exporting table                           EMP2          8 rows exported
+. . exporting table                       EMPLOYEE          6 rows exported
+. . exporting table                         EMP_10          1 rows exported
+. . exporting table                         EMP_20          1 rows exported
+. . exporting table                            PER          0 rows exported
+. . exporting table                       PERSONAL          6 rows exported
+. . exporting table                  QUERY_TUNNING          0 rows exported
+. . exporting table                       SALGRADE          5 rows exported
+. . exporting table                       SAL_PART
+. . exporting partition                             P1          1 rows exported
+. . exporting partition                             P2          1 rows exported
+. . exporting table                      TBS_TABLE          0 rows exported
+. . exporting table                           TEST          2 rows exported
+. exporting synonyms
+. exporting views
+. exporting stored procedures
+. exporting operators
+. exporting referential integrity constraints
+. exporting triggers
+. exporting indextypes
+. exporting bitmap, functional and extensible indexes
+. exporting posttables actions
+. exporting materialized views
+. exporting snapshot logs
+. exporting job queues
+. exporting refresh groups and children
+. exporting dimensions
+. exporting post-schema procedural objects and actions
+. exporting statistics
+Export terminated successfully without warnings.
+
+C:\>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
