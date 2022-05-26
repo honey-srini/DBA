@@ -1,0 +1,53 @@
+create table employ (empno number(10),name varchar(10), job varchar(10)
+,dob date , doj date , salary number, commission number, mgr_code number(10));
+
+
+alter table employ add constraint pk_empno primary key(empno);
+alter table employ add constraint fk_mgrc foreign key(mgr_code) references
+employ(empno);
+
+alter table employ add constraint chk_age check((doj-dob)/365 >18);
+
+insert into employ values(1,'srini','DBA','20-nov-2000','15-jun-2022',32000,
+3200,1);
+
+
+insert into employ values(2,'srinivasan','DBA','20-nov-2000','15-jun-2022',32000,
+3200,1);
+
+insert into employ values(3,'nithin','tester','29-jan-2016','15-jun-2022',32000,
+3200,1);
+
+insert into employ values(3,'honey','MD','20-nov-2000','15-jun-2022',100000,
+5000,1);
+
+create sequence emp_num start with 20 minvalue 1 maxvalue 100 nocycle;
+
+insert into employ values(emp_num.nextval,'honeysrini','MD','20-nov-2000','15-jun-2022',200000,
+5000,1);
+
+insert into employ values(emp_num.nextval,'honeysrini','MD','20-nov-2000','15-jun-2022',200000,
+6000,1);
+
+
+update employ set salary=
+decode(job,'tester',salary*1.15,'DBA',salary*1.18+commission*1.20,salary*1.16);
+
+//or
+
+update employ set salary=salary*1.15 where job='DBA';
+ 
+create index idx_name_emp on employ(name);
+
+select job,avg(salary) from employ group by job ;
+
+select greatest(salary,commission) from employ where job='MD';
+
+select greatest(10,20,30,40) from dual;
+
+select empno from employ where name='srini';
+
+select name from employ where mgr_code=(select mgr_code from employ where name='srini');
+
+
+select name from employ where rtrim(to_char(dob,'day'))='monday';

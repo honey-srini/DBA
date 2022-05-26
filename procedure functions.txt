@@ -1,0 +1,51 @@
+//num to word using decode and procedure
+create or replace procedure num_to_word(num number) 
+is
+begin 
+SELECT DECODE (num,1, 'ONE', 2, 'TWO',3,'THREE',4,'FOUR',
+5,'FIVE',6,'SIX',7,'SEVEN',8,'EIGHT',9,'NINE')from dual;
+end;
+
+execute num_to_word(3);
+
+
+//convert num to word using decode and function
+create or replace function func_num2word (n number) return varchar is
+word varchar(10);
+
+begin
+select decode(n,1,'one',2,'two','non')into word from dual;
+return(word);
+end;
+/
+
+select func_num2word(2) from dual;
+
+
+//num to word using procedure and case
+create or replace procedure word2num_switch (n number)is word varchar(20);
+begin
+select case n
+when 1 then 'one'
+when 2 then 'two'
+else 'non'
+end
+into word from dual;
+dbms_output.put_line(word);
+end;
+/
+
+
+//num to word using function and case
+create or replace function word2num (n number) return varchar is 
+word varchar(20);
+begin
+select case n
+when 1 then 'one'
+when 2 then 'two'
+else 'non'
+end
+into word from dual;
+return (word);
+end;
+/
